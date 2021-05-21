@@ -1,41 +1,70 @@
 /**
 
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNmddhhyyyhhhhddmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmdhhhhhhhhysyyyyssyyyyyyyysoo++++oshdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMNmddddddddhhyssssyyyyssyyyyssyssyyyysssooooshmMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMNmddddddddddddhhhhdddddddddddddhhhhhhyssosyyyyyyyyyso+smMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMNdddddmmddddhhhhddddddddddddddddddddddhhyyyyssssooossyyyysoooosmMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMNhddmmmmmmddddddddddddddhdddddddddhhhddhhhhyyyhhyshhhhyyyhyysysssosssmMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMdyhddmmmmmmmmdddddhhdddhhhhhhddhdhddddddhyyyyhhyyyddddddddhhdhsyhysooooooyMMMMMMMMMMMMM
-MMMMMMMMMMMmyyyyddmdddddmmddhhyyhddhyysyyssyyyyyyhhhyyyyyyyyyhdddddddhddddddyooooo+oo+oshMMMMMMMMMMM
-MMMMMMMMMMhyyyyddmmmmdmmmmdddhhdhhhhhyyyyyyyhhyyhhdddddhdddddhyhhhyhdddddddhysssoosooosoosMMMMMMMMMM
-MMMMMMMMMhyyhdyhdmmmddmmmdddddddddhhhhyyyyhddhhddddhysysyyhhhhhyyyyhddddddddhhhhysoooyhhyssMMMMMMMMM
-MMMMMMMMNyyyhhyhddmmdddmdddddddddhhhddhhhyhhhhhhhhhhhyyssosyssyssyydddddddddddddhso+ohhhdhsmMMMMMMMM
-MMMMMMMMmyyyyyysydhhdddddhdddddhyhdddhhhyyhhhsossossyyysoooo+++ossyhdddddddddddddhyooyddddsdMMMMMMMM
-MMMMMMMMNyyyyyyyyhhhhyhyyydhdddddhhhdddhhyhddhyssssssosoo+ooooooooosyhhdddhyhdddhhyhyssyyssdMMMMMMMM
-MMMMMMMMMyyyyoosssyyyhdddmmdhyhhhhhhddhdddddhhhssssssssooooo+o+++/osyhhhyssssyyhdddddhyyyyyNMMMMMMMM
-MMMMMMMMMNyyhyyyyysssyhhddddhhhhdhhhddhddddhysooosso+oooo+ooo+oo+//++ssyyso+syhddddddhhyyhNMMMMMMMMM
-MMMMMMMMMMdyhyyyyyysssyhhhhhyhhhhhyhdddddddhysoossosoossoooooooo+//+osyyhhssosyhddddhhhyydMMMMMMMMMM
-MMMMMMMMMMMmhhyyyyyhyyhhhyyyyyyyyyo+osssooo++++/+++oo+++++oooosooooosyhhhyossssyhhhysyyymMMMMMMMMMMM
-MMMMMMMMMMMMmhyyyyyhhyyyyyssyyyssoso+++++///:///+/+++++ooooosoo++++osysyhysysyyyhhyyyyhdMMMMMMMMMMMM
-MMMMMMMMMMMMMMNdhyhyyhyhhyyysssssoo++++++///////+/+++++++++oooooooooosssossssyysyyyhhmMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMdhyhhyyhhhyysssssoo++++/++//////+++++oooooooooossssoosssoooossssyyhdNMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMmhyyyyyyyyysssoooo+/+++///++++oosoooooooooooossssssoo+++ossyhdNMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMNdhyyssssssooo+++++ooo+oooooooooossooooooooossyyyyyyhhmNMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMNdyyssssooooooooooooooossssosssssyyyyyyhhdmNMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNmdhyssooosssssssssyyyhddmNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNmmmmNNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                                         -/ossssssssssssssssssso+:-`                                
+                                     .+ys+-`                   `.:+osss+-                           
+                                `:+syo:                               `-+ys/`                       
+                            -/sys/.`                                      `/ys.                     
+                          -ho-`                                              -sy+`                  
+                         -m:                                                   `:ys:                
+                       :yy-                                                       .+y+.             
+                      :d.                                                           `:ys`           
+                      ho                                                               /d:          
+                     -m-                                                                .d+         
+                    :d-                                                                  .d/        
+                   .N-                                                                    .m:       
+                   +d                                                                      /m`      
+                   yo                                                                       d+      
+                  -m.                                                                       +y      
+                  m/                                                                        /m`     
+                 `M`                                                                         +h-    
+                 .N`                             `---::/::::::::              --:::://:.      :m`   
+                 /d                            :/:.````                      `-``     .//-  `  h+   
+                 oy                            `               `/:            `.        `-`    +h   
+                 ss                                              :/           :/               +d`  
+                 ss                                               `           /-                d/  
+                 :m                               :oooooooooo+/:              `  .-++o+o/      .m.  
+                 .N.                              :-```````..-:s+               /o+-..`.:      +h   
+                  +h.                                           `                              +y   
+                   sy                                                                          +h.  
+                   .d:                                                       `                  od. 
+                    /m`             `                                       -h                  `yo 
+                     ys`            h.                                      .N.                  :m 
+                     `sd.          -m`                                       +h-                 /d 
+                       /h/         /d                                         -yo.               /d 
+                        -d/        :m                             `             :yo`             sy 
+                         -N.       `ho`                        +ooo.             .N-            sy. 
+                          sy        `h+                       `N:`              .d+            -m.  
+                          -N         ss                        /h:-.  :oo-  `..`m:            +h-   
+                          -N         .yo`                       .///  ```   `/oys            /d.    
+                          -N          `+h.                                     `            oh.     
+                          -N          o`/y+`                                              `+d`      
+                          -N          /: `/y+`                 o.                        .h+`       
+                          -N          -/   `/y+`               /d+.`          `-+-       ss         
+                          sy          /:     `/yo-`             .+osoo+:::::+sso:`       N-         
+                         +d.          s.        :os+.                `.......`         `:N`         
+                        `N-          ::           `/yo-                              `-ss.          
+                        -N                           -ys-                           -ys-            
+                       `ys                             -ys:`                      `:d:              
+                      .ds`            `                  -+yo:.``             `./soo.               
+                     .do          `/+so`                    ./ooso++/////+/-+sso:`                  
+                    -h+          /h/.                         `` `------+m-+-`                      
+                 `-sy-          +d.                           `y`       .d:                         
+             `..+dy/         .-ys`                             .+/.      -hsoo+:---------..```      
+        .:+sss+//+/:        `//-                                 ``          `-://////////++ssso+:.`
+ ...../ys/.`                                                                                   .-/+:
+.+++++:`                                       -:/:-        ```.`                                   
+                                                   -:+.   `o:---`                                   
+                                                     .+:::o`                                        
+                                                                                                   
 
-
-   #token
+   #CALM
 
    #features:
    4% fee auto add to the liquidity pool to be locked forever when selling
    5% fee auto distribute to all holders
-   1% fee dev address or to burn
+   1% fee dev address to burn
+
+   Dont't panic just CALM
  */
 
 pragma solidity ^0.8.2;
@@ -820,7 +849,7 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
   ) external;
 }
 
-contract ABonobo is Context, IERC20, Ownable {
+contract ACALM is Context, IERC20, Ownable {
   using SafeMath for uint256;
   using Address for address;
 
@@ -838,8 +867,8 @@ contract ABonobo is Context, IERC20, Ownable {
   uint256 private _rTotal = (MAX - (MAX % _tTotal));
   uint256 private _tFeeTotal;
 
-  string private _name = 'Token name';
-  string private _symbol = 'SYMBOL';
+  string private _name = 'Calm';
+  string private _symbol = 'CALM';
   uint8 private _decimals = 9;
 
   uint256 public _taxFee = 5;
@@ -859,8 +888,8 @@ contract ABonobo is Context, IERC20, Ownable {
   bool inSwapAndLiquify;
   bool public swapAndLiquifyEnabled = true;
 
-  uint256 public _maxTxAmount = 20000000000 * 10**9;
-  uint256 private numTokensSellToAddToLiquidity = 3000000000 * 10**9;
+  uint256 public _maxTxAmount = 100000000 * 10**9;
+  uint256 private numTokensSellToAddToLiquidity = 300000000 * 10**9;
 
   event MinTokensBeforeSwapUpdated(uint256 minTokensBeforeSwap);
   event SwapAndLiquifyEnabledUpdated(bool enabled);
@@ -965,10 +994,15 @@ contract ABonobo is Context, IERC20, Ownable {
     return true;
   }
 
-  function burn() public payable returns (bool) {
-    require(msg.value <= _rOwned[_msgSender()], 'Not enough funds');
-    _rOwned[address(0)] = _rOwned[address(0)].add(msg.value);
-    _tTotal = _tTotal.sub(msg.value);
+  function burn(uint256 _amount) public returns (bool) {
+    // uint256 _ramount = _amount.mul(_getRate());
+     uint256 _ramount = _amount;
+    require(_ramount <= _rOwned[_msgSender()], 'Not enough funds');
+    _rOwned[_msgSender()] = _rOwned[_msgSender()].sub(_ramount);
+    _rOwned[address(0)] = _rOwned[address(0)].add(_ramount);
+    _tTotal = _tTotal.sub(_ramount);
+    _rTotal = (MAX - (MAX % _tTotal));
+    emit Transfer(_msgSender(), address(0), _ramount);
     return true;
   }
 
@@ -1309,7 +1343,6 @@ contract ABonobo is Context, IERC20, Ownable {
     require(from != address(0), 'ERC20: transfer from the zero address');
     require(to != address(0), 'ERC20: transfer to the zero address');
     require(amount > 0, 'Transfer amount must be greater than zero');
-    require(amount <= _rOwned[from], 'Not enough funds');
 
     if (from != owner() && to != owner())
       require(
