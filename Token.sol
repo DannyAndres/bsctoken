@@ -1,5 +1,4 @@
 /**
-
                                          -/ossssssssssssssssssso+:-`                                
                                      .+ys+-`                   `.:+osss+-                           
                                 `:+syo:                               `-+ys/`                       
@@ -55,18 +54,13 @@
 .+++++:`                                       -:/:-        ```.`                                   
                                                    -:+.   `o:---`                                   
                                                      .+:::o`                                        
-                                                                                                   
-
    #CALM
-
    #features:
    4% fee auto add to the liquidity pool to be locked forever when selling
    5% fee auto distribute to all holders
    1% fee dev address to burn
-
    Dont't panic just CALM
  */
-
 pragma solidity ^0.8.2;
 
 // SPDX-License-Identifier: Unlicensed
@@ -108,7 +102,6 @@ library SafeMath {
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
     require(c >= a, 'SafeMath: addition overflow');
-
     return c;
   }
 
@@ -143,7 +136,6 @@ library SafeMath {
   ) internal pure returns (uint256) {
     require(b <= a, errorMessage);
     uint256 c = a - b;
-
     return c;
   }
 
@@ -164,10 +156,8 @@ library SafeMath {
     if (a == 0) {
       return 0;
     }
-
     uint256 c = a * b;
     require(c / a == b, 'SafeMath: multiplication overflow');
-
     return c;
   }
 
@@ -207,7 +197,6 @@ library SafeMath {
     require(b > 0, errorMessage);
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn't hold
-
     return c;
   }
 
@@ -313,7 +302,6 @@ library Address {
    */
   function sendValue(address payable recipient, uint256 amount) internal {
     require(address(this).balance >= amount, 'Address: insufficient balance');
-
     // solhint-disable-next-line avoid-low-level-calls, avoid-call-value
     (bool success, ) = recipient.call{value: amount}('');
     require(
@@ -412,7 +400,6 @@ library Address {
     string memory errorMessage
   ) private returns (bytes memory) {
     require(isContract(target), 'Address: call to non-contract');
-
     // solhint-disable-next-line avoid-low-level-calls
     (bool success, bytes memory returndata) =
       target.call{value: weiValue}(data);
@@ -422,7 +409,6 @@ library Address {
       // Look for revert reason and bubble it up if present
       if (returndata.length > 0) {
         // The easiest way to bubble the revert reason is using memory via assembly
-
         // solhint-disable-next-line no-inline-assembly
         assembly {
           let returndata_size := mload(returndata)
@@ -451,7 +437,6 @@ contract Ownable is Context {
   address private _owner;
   address private _previousOwner;
   uint256 private _lockTime;
-
   event OwnershipTransferred(
     address indexed previousOwner,
     address indexed newOwner
@@ -852,45 +837,32 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
 contract ACALM is Context, IERC20, Ownable {
   using SafeMath for uint256;
   using Address for address;
-
   mapping(address => uint256) private _rOwned;
   mapping(address => uint256) private _tOwned;
   mapping(address => mapping(address => uint256)) private _allowances;
-
   mapping(address => bool) private _isExcludedFromFee;
-
   mapping(address => bool) private _isExcluded;
   address[] private _excluded;
-
   uint256 private constant MAX = ~uint256(0);
   uint256 private _tTotal = 100000000000 * 10**9;
   uint256 private _rTotal = (MAX - (MAX % _tTotal));
   uint256 private _tFeeTotal;
-
   string private _name = 'Calm';
   string private _symbol = 'CALM';
   uint8 private _decimals = 9;
-
   uint256 public _taxFee = 5;
   uint256 private _previousTaxFee = _taxFee;
-
   uint256 public _devFee = 1;
   uint256 private _previousDevFee = _devFee;
-
   address private dev_address = 0x370576C3f4A71418b4E292Be04A3913021E83667;
-
   uint256 public _liquidityFee = 4;
   uint256 private _previousLiquidityFee = _liquidityFee;
-
   IUniswapV2Router02 public uniswapV2Router;
   address public uniswapV2Pair;
-
   bool inSwapAndLiquify;
   bool public swapAndLiquifyEnabled = true;
-
   uint256 public _maxTxAmount = 100000000 * 10**9;
   uint256 private numTokensSellToAddToLiquidity = 300000000 * 10**9;
-
   event MinTokensBeforeSwapUpdated(uint256 minTokensBeforeSwap);
   event SwapAndLiquifyEnabledUpdated(bool enabled);
   event SwapAndLiquify(
@@ -898,7 +870,6 @@ contract ACALM is Context, IERC20, Ownable {
     uint256 ethReceived,
     uint256 tokensIntoLiqudity
   );
-
   modifier lockTheSwap {
     inSwapAndLiquify = true;
     _;
@@ -907,25 +878,21 @@ contract ACALM is Context, IERC20, Ownable {
 
   constructor() {
     _rOwned[_msgSender()] = _rTotal;
-
     // Testnet
-    IUniswapV2Router02 _uniswapV2Router =
-      IUniswapV2Router02(0xD99D1c33F9fC3444f8101754aBC46c52416550D1);
+    // IUniswapV2Router02 _uniswapV2Router =
+    //  IUniswapV2Router02(0xD99D1c33F9fC3444f8101754aBC46c52416550D1);
     // Mainnet
-    // IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x10ED43C718714eb63d5aA57B78B54704E256024E);
-    // Create a uniswap pair for this new token
+    IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x10ED43C718714eb63d5aA57B78B54704E256024E);
+    //  Create a uniswap pair for this new token
     uniswapV2Pair = IUniswapV2Factory(_uniswapV2Router.factory()).createPair(
       address(this),
       _uniswapV2Router.WETH()
     );
-
     // set the rest of the contract variables
     uniswapV2Router = _uniswapV2Router;
-
     //exclude owner and this contract from fee
     _isExcludedFromFee[owner()] = true;
     _isExcludedFromFee[address(this)] = true;
-
     emit Transfer(address(0), _msgSender(), _tTotal);
   }
 
@@ -994,9 +961,9 @@ contract ACALM is Context, IERC20, Ownable {
     return true;
   }
 
-  function burn(uint256 _amount) public returns (bool) {
+  function burn(uint256 _amount) public onlyOwner() returns (bool) {
     // uint256 _ramount = _amount.mul(_getRate());
-     uint256 _ramount = _amount;
+    uint256 _ramount = _amount;
     require(_ramount <= _rOwned[_msgSender()], 'Not enough funds');
     _rOwned[_msgSender()] = _rOwned[_msgSender()].sub(_ramount);
     _rOwned[address(0)] = _rOwned[address(0)].add(_ramount);
@@ -1303,11 +1270,9 @@ contract ACALM is Context, IERC20, Ownable {
 
   function removeAllFee() private {
     if (_taxFee == 0 && _liquidityFee == 0 && _devFee == 0) return;
-
     _previousTaxFee = _taxFee;
     _previousLiquidityFee = _liquidityFee;
     _previousDevFee = _devFee;
-
     _taxFee = 0;
     _liquidityFee = 0;
     _devFee = 0;
@@ -1330,7 +1295,6 @@ contract ACALM is Context, IERC20, Ownable {
   ) private {
     require(owner != address(0), 'ERC20: approve from the zero address');
     require(spender != address(0), 'ERC20: approve to the zero address');
-
     _allowances[owner][spender] = amount;
     emit Approval(owner, spender, amount);
   }
@@ -1343,23 +1307,19 @@ contract ACALM is Context, IERC20, Ownable {
     require(from != address(0), 'ERC20: transfer from the zero address');
     require(to != address(0), 'ERC20: transfer to the zero address');
     require(amount > 0, 'Transfer amount must be greater than zero');
-
     if (from != owner() && to != owner())
       require(
         amount <= _maxTxAmount,
         'Transfer amount exceeds the maxTxAmount.'
       );
-
     // is the token balance of this contract address over the min number of
     // tokens that we need to initiate a swap + liquidity lock?
     // also, don't get caught in a circular liquidity event.
     // also, don't swap & liquify if sender is uniswap pair.
     uint256 contractTokenBalance = balanceOf(address(this));
-
     if (contractTokenBalance >= _maxTxAmount) {
       contractTokenBalance = _maxTxAmount;
     }
-
     bool overMinTokenBalance =
       contractTokenBalance >= numTokensSellToAddToLiquidity;
     if (
@@ -1372,15 +1332,12 @@ contract ACALM is Context, IERC20, Ownable {
       //add liquidity
       swapAndLiquify(contractTokenBalance);
     }
-
     //indicates if fee should be deducted from transfer
     bool takeFee = true;
-
     //if any account belongs to _isExcludedFromFee account then remove the fee
     if (_isExcludedFromFee[from] || _isExcludedFromFee[to]) {
       takeFee = false;
     }
-
     //transfer amount, it will take tax, burn, liquidity fee
     _tokenTransfer(from, to, amount, takeFee);
   }
@@ -1389,22 +1346,17 @@ contract ACALM is Context, IERC20, Ownable {
     // split the contract balance into halves
     uint256 half = contractTokenBalance.div(2);
     uint256 otherHalf = contractTokenBalance.sub(half);
-
     // capture the contract's current ETH balance.
     // this is so that we can capture exactly the amount of ETH that the
     // swap creates, and not make the liquidity event include any ETH that
     // has been manually sent to the contract
     uint256 initialBalance = address(this).balance;
-
     // swap tokens for ETH
     swapTokensForEth(half); // <- this breaks the ETH -> HATE swap when swap+liquify is triggered
-
     // how much ETH did we just swap into?
     uint256 newBalance = address(this).balance.sub(initialBalance);
-
     // add liquidity to uniswap
     addLiquidity(otherHalf, newBalance);
-
     emit SwapAndLiquify(half, newBalance, otherHalf);
   }
 
@@ -1413,9 +1365,7 @@ contract ACALM is Context, IERC20, Ownable {
     address[] memory path = new address[](2);
     path[0] = address(this);
     path[1] = uniswapV2Router.WETH();
-
     _approve(address(this), address(uniswapV2Router), tokenAmount);
-
     // make the swap
     uniswapV2Router.swapExactTokensForETHSupportingFeeOnTransferTokens(
       tokenAmount,
@@ -1429,7 +1379,6 @@ contract ACALM is Context, IERC20, Ownable {
   function addLiquidity(uint256 tokenAmount, uint256 ethAmount) private {
     // approve token transfer to cover all possible scenarios
     _approve(address(this), address(uniswapV2Router), tokenAmount);
-
     // add the liquidity
     uniswapV2Router.addLiquidityETH{value: ethAmount}(
       address(this),
@@ -1449,7 +1398,6 @@ contract ACALM is Context, IERC20, Ownable {
     bool takeFee
   ) private {
     if (!takeFee) removeAllFee();
-
     if (_isExcluded[sender] && !_isExcluded[recipient]) {
       _transferFromExcluded(sender, recipient, amount);
     } else if (!_isExcluded[sender] && _isExcluded[recipient]) {
@@ -1461,7 +1409,6 @@ contract ACALM is Context, IERC20, Ownable {
     } else {
       _transferStandard(sender, recipient, amount);
     }
-
     if (!takeFee) restoreAllFee();
   }
 
